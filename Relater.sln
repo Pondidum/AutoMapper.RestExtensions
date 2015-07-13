@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relater", "Relater\Relater.csproj", "{59808FFA-B9E1-43E3-AC0A-109AF9E3A572}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relater.Tests", "Relater.Tests\Relater.Tests.csproj", "{B6A09B9D-C8CD-4CDD-9897-52A6B628476C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{59808FFA-B9E1-43E3-AC0A-109AF9E3A572}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59808FFA-B9E1-43E3-AC0A-109AF9E3A572}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59808FFA-B9E1-43E3-AC0A-109AF9E3A572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A09B9D-C8CD-4CDD-9897-52A6B628476C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A09B9D-C8CD-4CDD-9897-52A6B628476C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A09B9D-C8CD-4CDD-9897-52A6B628476C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A09B9D-C8CD-4CDD-9897-52A6B628476C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
