@@ -4,8 +4,6 @@ require 'rest-client'
 require 'json'
 require 'open-uri'
 
-require_relative 'tools/ci.rb'
-require_relative 'tools/docs.rb'
 require_relative 'tools/semver.rb'
 
 ci_build = ENV['APPVEYOR_BUILD_VERSION'] ||= "0"
