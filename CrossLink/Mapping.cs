@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 
-namespace Relater
+namespace CrossLink
 {
 	public class Mapping
 	{

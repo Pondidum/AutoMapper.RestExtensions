@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Relater
+namespace CrossLink
 {
 	public class Linker
 	{

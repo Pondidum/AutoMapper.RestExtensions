@@ -8,8 +8,8 @@
     <ProjectGuid>{B6A09B9D-C8CD-4CDD-9897-52A6B628476C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Relater.Tests</RootNamespace>
-    <AssemblyName>Relater.Tests</AssemblyName>
+    <RootNamespace>CrossLink.Tests</RootNamespace>
+    <AssemblyName>CrossLink.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>f7880371</NuGetPackageImportStamp>
@@ -67,9 +67,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Relater\Relater.csproj">
+    <ProjectReference Include="..\CrossLink\CrossLink.csproj">
       <Project>{59808ffa-b9e1-43e3-ac0a-109af9e3a572}</Project>
-      <Name>Relater</Name>
+      <Name>CrossLink</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -79,7 +79,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

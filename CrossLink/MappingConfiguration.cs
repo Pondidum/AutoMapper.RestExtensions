@@ -1,6 +1,6 @@
 using System;
 
-namespace Relater
+namespace CrossLink
 {
 	public class MappingConfiguration<TInput>
 	{

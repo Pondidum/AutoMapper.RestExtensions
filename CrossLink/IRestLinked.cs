@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Relater
+namespace CrossLink
 {
 	public interface IRestLinked
 	{
