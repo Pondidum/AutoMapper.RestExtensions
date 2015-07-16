@@ -24,11 +24,17 @@ namespace CrossLink
 		public static TOutput Apply<TInput, TOutput>(TInput instance)
 			where TOutput : IRestLinked
 		{
-			var mapping = Mappings.FirstOrDefault(m => m.Input == typeof(TInput) && m.Output == typeof(TOutput));
+			var input = typeof(TInput);
+			var output = typeof(TOutput);
+			
+			var mapping = Mappings.FirstOrDefault(m => m.Input == input && m.Output == output );
 
 			if (mapping == null)
 			{
-				throw new NotSupportedException();
+				throw new NotImplementedException(string.Format(
+					"You must setup this mapping first (try calling Linker.Setup<{0}, {1}>()",
+					input.Name,
+					output.Name));
 			}
 
 			return mapping.Apply<TOutput>(instance);
