@@ -64,6 +64,10 @@
     <Compile Include="Acceptance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scratchpad.cs" />
+    <Compile Include="TestData\Group.cs" />
+    <Compile Include="TestData\GroupResponse.cs" />
+    <Compile Include="TestData\User.cs" />
+    <Compile Include="TestData\UserResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

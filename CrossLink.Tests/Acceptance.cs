@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CrossLink.Tests.TestData;
 using Shouldly;
 using Xunit;
 
@@ -16,23 +17,23 @@ namespace CrossLink.Tests
 		[Fact]
 		public void When_the_objects_are_not_registered()
 		{
-			var input = new PersonDto();
-			Should.Throw<NotImplementedException>(() => Linker.Apply<PersonDto, PersonResponse>(input));
+			var input = new User();
+			Should.Throw<NotImplementedException>(() => Linker.Apply<User, UserResponse>(input));
 		}
 
 		[Fact]
 		public void When_there_are_no_conventions()
 		{
-			Linker.Setup<PersonDto, PersonResponse>();
+			Linker.Setup<User, UserResponse>();
 
-			var input = new PersonDto
+			var input = new User
 			{
 				ID = Guid.NewGuid(),
 				Name = "Testing",
 				Dob = DateTime.Now
 			};
 
-			var response = Linker.Apply<PersonDto, PersonResponse>(input);
+			var response = Linker.Apply<User, UserResponse>(input);
 
 			response.Links.ShouldBeEmpty();
 			response.ID.ShouldBe(input.ID);
@@ -43,30 +44,14 @@ namespace CrossLink.Tests
 		[Fact]
 		public void When_a_convention_is_setup()
 		{
-			Linker.Setup<PersonDto, PersonResponse>()
+			Linker.Setup<User, UserResponse>()
 				.Link("self", person => "people/byID/" + person.ID);
 
-			var input = new PersonDto { ID = Guid.NewGuid() };
-			var response = Linker.Apply<PersonDto, PersonResponse>(input);
+			var input = new User { ID = Guid.NewGuid() };
+			var response = Linker.Apply<User, UserResponse>(input);
 
 			response.Links.Single().Key.ShouldBe("self");
 			response.Links.Single().Value.ShouldBe("people/byID/" + input.ID);
 		}
-	}
-
-	public class PersonDto
-	{
-		public Guid ID { get; set; }
-		public string Name { get; set; }
-		public DateTime Dob { get; set; }
-	}
-
-	public class PersonResponse : IRestLinked
-	{
-		public Guid ID { get; set; }
-		public string Name { get; set; }
-		public DateTime Dob { get; set; }
-
-		public Dictionary<string, string> Links { get; set; }
 	}
 }
