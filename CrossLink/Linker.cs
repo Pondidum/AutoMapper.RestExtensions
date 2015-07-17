@@ -13,6 +13,11 @@ namespace CrossLink
 			Mappings = new List<Mapping>();
 		}
 
+		public static void ClearAllMappings()
+		{
+			Mappings.Clear();
+		}
+
 		public static MappingConfiguration<TInput> Setup<TInput, TOutput>()
 		{
 			var mapping = new Mapping(typeof(TInput), typeof(TOutput));

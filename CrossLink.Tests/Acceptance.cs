@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Shouldly;
 using Xunit;
 
@@ -7,6 +8,11 @@ namespace CrossLink.Tests
 {
 	public class Acceptance
 	{
+		public Acceptance()
+		{
+			Linker.ClearAllMappings();
+		}
+
 		[Fact]
 		public void When_the_objects_are_not_registered()
 		{
@@ -32,6 +38,19 @@ namespace CrossLink.Tests
 			response.ID.ShouldBe(input.ID);
 			response.Name.ShouldBe(input.Name);
 			response.Dob.ShouldBe(input.Dob);
+		}
+
+		[Fact]
+		public void When_a_convention_is_setup()
+		{
+			Linker.Setup<PersonDto, PersonResponse>()
+				.Link("self", person => "people/byID/" + person.ID);
+
+			var input = new PersonDto { ID = Guid.NewGuid() };
+			var response = Linker.Apply<PersonDto, PersonResponse>(input);
+
+			response.Links.Single().Key.ShouldBe("self");
+			response.Links.Single().Value.ShouldBe("people/byID/" + input.ID);
 		}
 	}
 
