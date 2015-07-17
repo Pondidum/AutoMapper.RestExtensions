@@ -63,14 +63,14 @@ nugets_pack :pack do |n|
   n.exe = tool_nuget
   n.out = package_output
 
-  n.files = FileList["#{@project_name}/*.csproj"]
+  n.files = FileList["#{project_name}/*.csproj"]
 
   n.with_metadata do |m|
     m.description = 'Helps populate restful links on objects'
     m.authors = 'Andy Dote'
-    m.project_url = "https://github.com/pondidum/#{@project_name}"
-    m.license_url = "https://github.com/Pondidum/#{@project_name}/blob/master/LICENSE.txt"
-    m.version = @project_version
+    m.project_url = "https://github.com/pondidum/#{project_name}"
+    m.license_url = "https://github.com/Pondidum/#{project_name}/blob/master/LICENSE.txt"
+    m.version = project_version
     m.tags = 'rest webapi mvc'
   end
 
